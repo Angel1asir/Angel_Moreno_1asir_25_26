@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calendarios del ejercicio 4 por angel</title>
+
+<style>
+
+body{
+    background:#dcdcdc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section{
+    width:900px;
+    margin:30px auto;
+}
+
+article{
+    background:#ece8c9;
+    padding:30px;
+    margin-bottom:30px;
+    border:1px solid #999;
+}
+
+table{
+    width:60%;
+    margin:0 auto;
+    border-collapse:collapse;
+    text-align:center;
+}
+
+/* 🔹 CAMBIADO: quitado border-top y border-bottom */
+th{
+    padding:5px;
+    border-top:none;
+    border-bottom:none;
+    font-size:14px;
+}
+
+td{
+    padding:6px;
+    font-size:14px;
+}
+
+.titulo1{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.titulo1 span{
+    display:inline-block;
+    border-top:2px solid black;
+    padding-top:10px;
+    letter-spacing:4px;
+}
+
+.cal1 td{
+    border-top:1px solid black;
+}
+
+.titulo2{
+    width:60%;
+    margin:0 auto 10px auto;
+    text-align:right;
+}
+
+.cal2 th,
+.cal2 td{
+    border-left:1px solid black;
+    border-right:1px solid black;
+}
+
+.titulo3{
+    width:60%;
+    margin:0 auto 10px auto;
+    text-align:left;
+}
+
+.cal3 th,
+.cal3 td{
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-right:1px solid black;
+}
+
+/* 🔹 AÑADIDO: cerrar tabla de noviembre */
+.cal3 tr:last-child td{
+    border-bottom:1px solid black;
+}
+
+</style>
+</head>
+
+<body>
+
+<section>
+
+<article>
+    <h2 class="titulo1">
+        <span>Septiembre 2004</span>
+    </h2>
+    <table class="cal1">
+        <tr>
+            <th>Lu</th><th>Ma</th><th>Mi</th><th>Ju</th><th>Vi</th><th>Sá</th><th>Do</th>
+        </tr>
+        <tr>
+            <td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+        </tr>
+        <tr>
+            <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+        </tr>
+        <tr>
+            <td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+        </tr>
+        <tr>
+            <td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+        </tr>
+        <tr>
+            <td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td>
+        </tr>
+    </table>
+</article>
+
+<article>
+    <h2 class="titulo2">Octubre 2004</h2>
+    <table class="cal2">
+        <tr>
+            <th>Lu</th><th>Ma</th><th>Mi</th><th>Ju</th><th>Vi</th><th>Sá</th><th>Do</th>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td>
+        </tr>
+        <tr>
+            <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+        </tr>
+        <tr>
+            <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+        </tr>
+        <tr>
+            <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+        </tr>
+        <tr>
+            <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+        </tr>
+    </table>
+</article>
+
+<article>
+    <h2 class="titulo3">NOVIEMBRE 2004</h2>
+    <table class="cal3">
+        <tr>
+            <th>Lu</th><th>Ma</th><th>Mi</th><th>Ju</th><th>Vi</th><th>Sá</th><th>Do</th>
+        </tr>
+        <tr>
+            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+        </tr>
+        <tr>
+            <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+        </tr>
+        <tr>
+            <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+        </tr>
+        <tr>
+            <td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
+        </tr>
+        <tr>
+            <td>29</td><td>30</td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+    </table>
+</article>
+
+</section>
+
+</body>
+</html>
