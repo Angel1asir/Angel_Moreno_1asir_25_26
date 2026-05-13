@@ -1,0 +1,860 @@
+//PEDIR NOTAS REPETIDAMENTE HASTA QUE EL VALOR DIGITADO SEA -99 VISUALIZAD LA MEDIA DE LAS NOTTAS INTRODUCIDAS MIENTARS SWICHTS ES IGUAL A 0 DENTRO DE LA ESTRUCTURA REPETITIBA PEDIMOS A NOTA Y LA SUMAMOS 
+
+<html>
+<body>
+<script>
+
+function Proceso(){
+    let conta = 0, suma = 0, sw = 0;
+
+    while (sw == 0){
+        let nota = parseInt(prompt("dame nota: "));
+
+        if (nota == -99){
+            sw = 1;
+        } else{
+            suma = suma + nota;
+            conta++;
+        }
+    }
+
+    if (conta == 0){
+        return 0;
+    } else{
+        return suma / conta;
+    }
+}
+
+function Visualizar(media){
+    if (media == 0){
+        document.write("No se introdujeron notas");
+    } else{
+        document.write("La media es: " + media);
+    }
+}
+
+//-----------------------Programa Principal----------------------------------
+
+let resul = Proceso();
+Visualizar(resul);
+
+</script>
+</body>
+</html>
+
+//se piden notas repetidamente al usuario asta que el usuario digite menos 99 en ese momento visualizar todas las notas incluidas
+<html>
+<body>
+<script>
+
+function Proceso(){
+    let sw = 0;
+    let tab = [];
+
+    while (sw == 0){
+        let nota = parseInt(prompt("dame nota: "));
+
+        if (nota == -99){
+            sw = 1;
+        } else{
+            tab.push(nota);
+        }
+    }
+
+    return tab;
+}
+
+function Visualizar(tabla_notas){
+
+    if (tabla_notas.length == 0){
+        document.write("No se introdujeron notas");
+    } else{
+        for (let i = 0; i < tabla_notas.length; i++){
+            document.write(tabla_notas[i] + "<br>");
+        }
+    }
+}
+
+//-----------------------Programa Principal----------------------------------
+
+let resul = Proceso();
+Visualizar(resul);
+
+</script>
+</body>
+</html>
+
+//Visualizar numeros enteros del 1 e adelante asta que el numero introducido sea superior a cien y multiplo de 7 
+
+<html>
+<body>
+<script>
+
+//-----------------------Funciones-----------------------
+
+function Proceso(){
+
+    let numero = 1;
+    let sw = 0;
+
+    while (sw == 0){
+
+        if (numero > 100 && numero % 7 == 0){
+            sw = 1;
+        } else{
+            alert(numero);
+            numero++;
+        }
+    }
+}
+
+//-----------------------Programa Principal-----------------------
+
+Proceso();
+
+</script>
+</body>
+</html>
+
+declarr u array con valores numericos y enteros obtener si el array esta ordenado ascendentemente si o no utilidar swich
+
+<html>
+<body>
+<script>
+
+//-----------------------Funciones-----------------------
+
+function Proceso(tabla_numeros){
+
+    let sw = 1;
+    let i = 0;
+
+    while (sw == 1 && i < tabla_numeros.length - 1){
+
+        if (tabla_numeros[i] > tabla_numeros[i + 1]){
+            sw = 0;
+        } else{
+            i++;
+        }
+    }
+
+    return sw;
+}
+
+function Visualizar(dato){
+
+    if (dato == 1){
+        document.write("si");
+    } else{
+        document.write("no");
+    }
+}
+
+//-----------------------Programa Principal-----------------------
+
+let tabla_numeros = [2, 3, 4, 10, 20, 40];
+
+let resul = Proceso(tabla_numeros);
+
+Visualizar(resul);
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+declarar2 array con valores numericos se pide visualizar si o no los 2 array son exactamente iguales 
+<html>
+<body>
+<script>
+
+//-----------------------Funciones-----------------------
+
+function Proceso(tab1, tab2){
+
+    let sw = 1;
+    let i = 0;
+
+    if (tab1.length != tab2.length){
+        return 0;
+    }
+
+    while (sw == 1 && i < tab1.length){
+
+        if (tab1[i] != tab2[i]){
+            sw = 0;
+        } else{
+            i++;
+        }
+    }
+
+    return sw;
+}
+
+function Visualizar(dato){
+
+    if (dato == 1){
+        document.write("Los arrays son iguales");
+    } else{
+        document.write("Los arrays NO son iguales");
+    }
+}
+
+//-----------------------Programa Principal-----------------------
+
+let array1 = [1, 2, 3, 4, 5];
+let array2 = [1, 2, 3, 4, 5];
+
+let resul = Proceso(array1, array2);
+
+Visualizar(resul);
+
+</script>
+</body>
+</html>
+//-----------------------17 ABRIL-----------------------
+//BAMOS A UTILIZAR UN SWICH PEDIR DATOS NUMERICOS REPETINADEMENTE AL USUARIO ASTA QUE SE DIGITE -99 ENTONCES CUANDO SE DIGUITE -99 DIGUITALIZA EL VALOR DE LOS VALORES INTRODUCIDOS 
+
+<html>
+<body>
+<script>
+
+function Proceso (){
+	
+    let sw = 0;
+    let mayor = -999999;
+
+    while (sw == 0){
+        let numero = parseInt(prompt("Deme numero:"));
+
+        if (numero == -99){
+            sw = 1;	
+        } else {
+            if (numero > mayor){
+                mayor = numero;
+            }
+        }
+    }
+    return mayor;
+}
+
+function visualizar(dato){
+    alert("el mayor es " + dato);
+}
+
+
+let resultado = Proceso();
+visualizar(resultado);
+
+</script>
+</body>
+</html>
+
+
+//pedir numeros repetidamente siempre y cuando el numero tecleado sea mayor que el anterior mente tecleado en el momento que se rompa la secuencia visualizar cuantos numeros han sido tecleados y cuales 
+<html>
+<body>
+<script>
+
+function Proceso (){
+    
+    let sw = 0;
+    let sw2 = 0;
+    let tab_numeros = [];
+    let anterior;
+
+    while (sw == 0){ 
+        let numero = parseInt(prompt("Deme numero:"));
+
+        if (sw2 == 0){
+            tab_numeros.push(numero);
+            anterior = numero;
+            sw2 = 1;
+
+        } else {
+            if (numero < anterior){
+                sw = 1;
+            } else {
+                tab_numeros.push(numero);
+                anterior = numero;
+            }
+        }
+    }
+    return tab_numeros;
+}
+
+function Visualizar(dato){
+    for (let i = 0; i < dato.length; i++){
+        alert(dato[i]);
+    }
+    alert("Cantidad de numeros: " + dato.length);
+}
+
+
+let resultado = Proceso();
+Visualizar(resultado);
+
+</script>
+</body>
+</html>
+
+//pedir numero repetidamente hasta hacertar una clave numerica por cada numero introducido no aceptado se le dara al usuario un mensaje como pista para decirle que el numero introducido por el es mayor o menor una vexz haceptado el numero visulizar las ocasiones que a nesesitado para hacertarlo  sw es = a 0 
+
+
+
+
+
+<html>
+<body>
+<script>
+
+let tabla_sueldos = [["Pepe", 800, 2300, 1900],
+					 ["Ana", 1500, 4000],
+					 ["Manuel", 900, 3200, 5000]
+					];
+
+function visualizar (mat_sueldos){
+	for (let i = 0; i < mat_sueldos.length; i++){
+		for (let k = 0; k < mat_sueldos[i].length; k++){
+			alert(mat_sueldos[i][k]);
+		}
+		alert(); 
+	}
+}
+
+visualizar(tabla_sueldos);
+
+</script>
+</body>
+</html>
+
+//POR CADA EMPLEADO DIME EL TOTAL DE LOS SUELDOS 
+<html>
+<body>
+<script>
+
+let tabla_sueldos = [["Pepe", 800, 2300, 1900],
+					 ["Ana", 1500, 4000],
+					 ["Manuel", 900, 3200, 5000]
+					];
+
+function visualizar (mat_sueldos){
+	for (let i = 0; i < mat_sueldos.length; i++){
+		
+		let suma = 0;
+
+		for (let k = 1; k < mat_sueldos[i].length; k++){
+			suma = suma + mat_sueldos[i][k];
+		}
+
+		alert(mat_sueldos[i][0] + " " + suma); 
+	}
+}
+
+visualizar(tabla_sueldos);
+
+</script>
+</body>
+</html>
+
+//Por cada trabajador la media
+
+
+<html>
+<body>
+<script>
+
+let tabla_sueldos = [["Pepe", 800, 2300, 1900],
+					 ["Ana", 1500, 4000],
+					 ["Manuel", 900, 3200, 5000]
+					];
+
+function visualizar (mat_sueldos){
+	for (let i = 0; i < mat_sueldos.length; i++){
+		
+		let suma = 0;
+		let conta = 0;
+
+		for (let k = 1; k < mat_sueldos[i].length; k++){
+			suma = suma + mat_sueldos[i][k];
+			conta++;
+		}
+
+		alert(mat_sueldos[i][0] + " " + (suma / conta)); 
+	}
+}
+
+visualizar(tabla_sueldos);
+
+</script>
+</body>
+</html>
+
+visualizar el nombre del trabajador que tenga mayor media 
+<html>
+<body>
+<script>
+
+let tabla_sueldos = [["Pepe", 800, 2300, 1900],
+					 ["Ana", 1500, 4000],
+					 ["Manuel", 900, 3200, 5000]
+					];
+
+function Proceso (mat_sueldos){
+
+	let mayor = -1;
+	let nombre_trabajador = "";
+
+	for (let i = 0; i < mat_sueldos.length; i++){
+		
+		let suma = 0;
+		let conta = 0;
+
+		for (let k = 1; k < mat_sueldos[i].length; k++){
+			suma = suma + mat_sueldos[i][k];
+			conta++;
+		}
+
+		let media = suma / conta;
+
+		if (media > mayor){
+			mayor = media;
+			nombre_trabajador = mat_sueldos[i][0];
+		}
+	}
+
+	return nombre_trabajador;
+}
+
+function visualizar (dato){
+	alert("Trabajador con mayor media: " + dato);
+}
+
+visualizar(Proceso(tabla_sueldos));
+
+</script>
+</body>
+</html>
+
+ahora que me diga el nombre y el sueldoo 
+<html>
+<body>
+<script>
+
+let tabla_sueldos = [["Pepe", 800, 2300, 1900],
+					 ["Ana", 1500, 4000],
+					 ["Manuel", 900, 3200, 5000]
+					];
+
+function Proceso (mat_sueldos){
+
+	let mayor = -1;
+	let nombre_trabajador = "";
+	let media_mayor = 0;
+
+	for (let i = 0; i < mat_sueldos.length; i++){
+		
+		let suma = 0;
+		let conta = 0;
+
+		for (let k = 1; k < mat_sueldos[i].length; k++){
+			suma = suma + mat_sueldos[i][k];
+			conta++;
+		}
+
+		let media = suma / conta;
+
+		if (media > mayor){
+			mayor = media;
+			nombre_trabajador = mat_sueldos[i][0];
+			media_mayor = media;
+			
+		}
+	}
+
+	return [nombre_trabajador, media_mayor];
+}
+
+function Visualizar (dato){
+	alert("Trabajador: " + dato[0]);
+	alert("Media sueldo: " + dato[1]);
+}
+
+Visualizar(Proceso(tabla_sueldos));
+
+</script>
+</body>
+</html>
+
+importar pandas as pd
+
+#tus listas 
+nombres = ['Ana','Luis','Pedro']
+edades = [25, 30, 35]
+
+#  crear un diccionarilo 
+datos ={'Nombre': nombre, 'Edades':edades}
+
+#convertir a dataframe (datos)+
+
+#exportar a excel 
+df.to_excel("datos.xlsx", index=False)
+print("Archivo Excel generando con exito")
+
+#pip install pandas
+#pip install openpyxl 
+
+Declarar un simple aray de un alumno calcucular su nombre y sus notas 
+
+<html>
+<body>
+<script>
+
+let alumno = ["Carlos", 7, 8.5, 6, 9];
+
+function calcular(datos){
+
+    let nombre = datos[0];
+    let suma = 0;
+    let conta = 0;
+
+    for (let i = 1; i < datos.length; i++){
+        suma = suma + datos[i];
+        conta++;
+    }
+
+    let media = suma / conta;
+
+    return [nombre, media];
+}
+
+function visualizar(resultado){
+    alert("Alumno: " + resultado[0] + 
+          "Media: " + resultado[1]);
+}
+
+visualizar(calcular(alumno));
+
+</script>
+</body>
+</html>
+
+EN LA FUNCION VISUALIZAR ENVIAR 2 DATOS UNO DE ELLOS EL ARRAY  COMPLETO Y LA MEDIA 
+<html>
+<body>
+<script>
+
+let alumno = ["Carlos", 7, 8.5, 6, 9];
+
+function calcular(datos){
+
+    let suma = 0;
+    let conta = 0;
+
+    for (let i = 1; i < datos.length; i++){
+        suma = suma + datos[i];
+        conta++;
+    }
+
+    let media = suma / conta;
+
+    return media; 
+}
+
+function visualizar(datos, media){
+    alert("Alumno: " + datos[0] + 
+          "Notas: " + datos.slice(1) + 
+          "Media: " + media);
+}
+
+
+visualizar(alumno, calcular(alumno));
+
+</script>
+</body>
+</html>
+
+<html>
+<body>
+<script>
+
+function Proceso(tab_notas){
+
+    let suma = 0;
+
+    for (let i = 1; i < tab_notas.length; i++){
+        suma += tab_notas[i];
+    }
+
+    let media = suma / (tab_notas.length - 1);
+
+    return media;
+}
+
+function visualizar(tabla_notas, media){
+    alert(tabla_notas[0] + " tiene " + media);
+}
+
+let tabla_notas = ["Pedro", 10, 4, 5, 7];
+
+visualizar(tabla_notas, Proceso(tabla_notas));
+
+</script>
+</body>
+</html>
+
+
+declarar un array vidimendional con las notas de 3 alumnos  declarar la media de cada una y sus nombres
+<html>
+<body>
+<script>
+
+let tabla_notas = [
+    ["Pedro",4, 7, 8, 9],
+    ["Antonio",6, 7,8,10,3],
+    ["ana",8,8,8,8,8,8]
+];
+
+function calcularMedias(tabla){
+
+    for (let i = 0; i < tabla.length; i++){
+
+        let suma = 0;
+        let conta = 0;
+
+        for (let k = 1; k < tabla[i].length; k++){
+            suma += tabla[i][k];
+            conta++;
+        }
+
+        let media = suma / conta;
+
+        alert("Alumno: " + tabla[i][0] + 
+              "Media: " + media);
+    }
+}
+
+calcularMedias(tabla_notas);
+
+</script>
+</body>
+</html>
+
+
+el mombre del que tenga mayor media 
+<html>
+<body>
+<script>
+
+let tabla_notas = [
+    ["Pedro", 4, 7, 8, 9],
+    ["Antonio", 6, 7, 8, 10, 3],
+    ["Ana", 8, 8, 8, 8, 8, 8]
+];
+
+function Proceso(tabla){
+
+    let mayor = -1;
+    let nombre = "";
+
+    for (let i = 0; i < tabla.length; i++){
+
+        let suma = 0;
+        let conta = 0;
+
+        for (let k = 1; k < tabla[i].length; k++){
+            suma += tabla[i][k];
+            conta++;
+        }
+
+        let media = suma / conta;
+
+        if (media > mayor){
+            mayor = media;
+            nombre = tabla[i][0];
+        }
+    }
+
+    return nombre;
+}
+
+function visualizar(dato){
+    alert("Alumno con mayor media: " + dato);
+}
+
+visualizar(Proceso(tabla_notas));
+
+</script>
+</body>
+</html>
+
+<html>
+<body>
+<script>
+
+function media(tab_notas){
+    let suma = 0;
+
+    for (let i = 1; i < tab_notas.length; i++){
+        suma += tab_notas[i];
+    }
+
+    return suma / (tab_notas.length - 1);
+}
+
+function Proceso(mat_alumnos){
+
+    let mayor = -1;
+    let fila = 0;
+
+    for (let i = 0; i < mat_alumnos.length; i++){
+
+        let m = media(mat_alumnos[i]);
+
+        if (m > mayor){
+            mayor = m;
+            fila = i;
+        }
+    }
+
+    return fila;
+}
+
+function visualizar(mat_alumnos, fila){
+    alert(mat_alumnos[fila][0] + 
+          " tiene de media " + 
+          media(mat_alumnos[fila]));
+}
+
+let mat_alumnos = [
+    ["Pedro", 4, 7, 8, 9],
+    ["Antonio", 6, 6, 6, 6, 6],
+    ["Ana", 7, 8, 8, 5]
+];
+
+visualizar(mat_alumnos, Proceso(mat_alumnos));
+
+</script>
+</body>
+</html>
+pedir 2 numero a y b declarar 4 botones   si le das a la + haces  la sema si le das el - lo re tas si le das a la x lo mulltiplicas y si le da asl / lo divides
+
+<html>
+<body>
+
+<h3>Calculadora básica</h3>
+
+Número A: <input type="number" id="a"><br><br>
+Número B: <input type="number" id="b"><br><br>
+
+<button onclick="sumar()">+</button>
+<button onclick="restar()">-</button>
+<button onclick="multiplicar()">x</button>
+<button onclick="dividir()">/</button>
+
+<script>
+
+function obtenerValores(){
+    let a = parseFloat(document.getElementById("a").value);
+    let b = parseFloat(document.getElementById("b").value);
+    return [a, b];
+}
+
+function sumar(){
+    let datos = obtenerValores();
+    alert("Resultado: " + (datos[0] + datos[1]));
+}
+
+function restar(){
+    let datos = obtenerValores();
+    alert("Resultado: " + (datos[0] - datos[1]));
+}
+
+function multiplicar(){
+    let datos = obtenerValores();
+    alert("Resultado: " + (datos[0] * datos[1]));
+}
+
+function dividir(){
+    let datos = obtenerValores();
+
+    if (datos[1] == 0){
+        alert("No se puede dividir entre 0");
+    } else {
+        alert("Resultado: " + (datos[0] / datos[1]));
+    }
+}
+
+</script>
+
+</body>
+</html>
+
+folio javascript con objetos y con json 
+<!DOCTYPE>
+<html>
+<body>
+<h1>JavaScript Objects</h1>
+<h2>Creating an object</h2>
+
+<p id="demo"></p>
+<script>
+const productoJSON={"id":101,"nombre":"Monitor 4k","disponible":true,"precio":350.50}
+const productoConvertido =JSON.parse(productoJSON);
+alert("CON JSON:"+productoConvertido.nombre);//Resultado:"Monitor 4k"
+
+
+const cocheJS = {
+	marca:'toyota', 
+	modelo:"Corolla",
+	años:2024,
+	encender:function(){
+		return "El motor esta en marcha"
+	},
+	propietario:undefined
+};
+
+alet("con objetos javascript: "+cocheJS.encender());
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Objects</h1>
+<h2>Creating an object</h2>
+
+<p id="demo"></p>
+
+<script>
+// JSON como texto
+const productoJSON = '{"id":101,"nombre":"Monitor 4k","disponible":true,"precio":350.50}';
+
+// Convertir JSON a objeto JavaScript
+const productoConvertido = JSON.parse(productoJSON);
+
+alert("CON JSON: " + productoConvertido.nombre);
+
+// Objeto JavaScript
+const cocheJS = {
+    marca: 'Toyota',
+    modelo: "Corolla",
+    año: 2024,
+    encender: function() {
+        return "El motor está en marcha";
+    },
+    propietario: undefined
+};
+
+alert("Con objetos JavaScript: " + cocheJS.encender());
+
+</script>
+
+</body>
+</html>
